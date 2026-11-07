@@ -1,0 +1,279 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | UNICORE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CONTACT HERO */
+        .article-hero.hero-contact {
+            position: relative;
+            min-height: 620px;
+            padding: 170px 10% 110px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-image:
+                linear-gradient(
+                    90deg,
+                    rgba(7, 21, 37, 0.96) 0%,
+                    rgba(7, 21, 37, 0.75) 50%,
+                    rgba(7, 21, 37, 0.25) 100%
+                ),
+                url("https://www.hellmann.com/sites/default/files/styles/hwl_key_image_hero_2x/public/2021-02/downloads-roadfreight.jpg?itok=NX1Ni-Ij");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .article-hero.hero-contact > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-hero.hero-contact .section-number {
+            color: #70baff;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        .article-hero.hero-contact h1 {
+            color: #fff;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(54px, 8vw, 100px);
+            line-height: 0.98;
+            font-weight: 700;
+            margin: 0 0 25px;
+            max-width: 850px;
+        }
+
+        .article-hero.hero-contact h1 span {
+            color: #70baff;
+        }
+
+        .article-hero.hero-contact p {
+            color: rgba(255,255,255,0.85);
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 17px 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 6px;
+            background: #0b1d31;
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #1479d4;
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            cursor: pointer;
+            border: none;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .article-hero.hero-contact {
+                min-height: 550px;
+                padding: 150px 7% 80px;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="index.html" class="brand">
+            UNICORE<span>.</span>
+        </a>
+
+        <nav class="nav">
+            <a href="index.html">Domů</a>
+            <a href="about.html">O nás</a>
+            <a href="services.html">Služby</a>
+            <a href="process.html">Jak pracujeme</a>
+            <a href="why.html">Proč UNICORE</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+
+        <a href="contact.html" class="header-button">Kontaktujte nás</a>
+
+        <button class="menu-toggle" aria-label="Otevřít menu">
+            ☰
+        </button>
+    </header>
+
+
+    <!-- HERO: TEXT PŘÍMO NA FOTOGRAFII -->
+    <section class="article-hero hero-contact">
+
+        <div class="section-number">06 / KONTAKT</div>
+
+        <h1>
+            POJĎME<br>
+            <span>MLUVIT.</span>
+        </h1>
+
+        <p>
+            Máte otázku, projekt nebo zájem o spolupráci?
+            Napište nám. Jsme připraveni najít řešení,
+            které bude fungovat právě pro vás.
+        </p>
+
+        <a href="#kontakt" class="button-primary">
+            SPOJTE SE S NÁMI ↗
+        </a>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-layout" id="kontakt">
+
+        <div class="contact-info">
+
+            <div class="section-number">POJĎME SE SPOJIT</div>
+
+            <h2>Jsme tu pro vás.</h2>
+
+            <p>
+                Každá spolupráce začíná rozhovorem.
+                Napište nám několik slov o svém projektu
+                a společně najdeme vhodný další krok.
+            </p>
+
+            <div class="contact-details">
+                <h3>UNICORE</h3>
+                <p>Evropská přeprava. Spolehlivá řešení.</p>
+
+                <p>
+                    <strong>E-mail:</strong><br>
+                    info@unicore.cz
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+        <form
+            class="contact-form"
+            action="mailto:info@unicore.cz"
+            method="post"
+            enctype="text/plain"
+        >
+
+            <input
+                type="text"
+                name="Jmeno"
+                placeholder="Vaše jméno"
+                required
+            >
+
+            <input
+                type="email"
+                name="Email"
+                placeholder="Váš e-mail"
+                required
+            >
+
+            <input
+                type="text"
+                name="Predmet"
+                placeholder="Předmět"
+                required
+            >
+
+            <textarea
+                name="Zprava"
+                placeholder="Vaše zpráva..."
+                required
+            ></textarea>
+
+            <button type="submit" class="button-primary">
+                ODESLAT ZPRÁVU ↗
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <div class="brand">
+                UNICORE<span>.</span>
+            </div>
+
+            <p>
+                Evropská přeprava.
+                Spolehlivá řešení.
+            </p>
+
+            <a href="contact.html">Kontaktujte nás ↗</a>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 UNICORE. Všechna práva vyhrazena.</p>
+            <a href="index.html">Zpět nahoru ↑</a>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,877 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --navy: #071525;
+    --navy2: #0b1d31;
+    --blue: #1479d4;
+    --light: #70baff;
+    --white: #f4f7fb;
+    --muted: #91a1b5;
+    --line: rgba(255,255,255,.13);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--navy);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+/* HEADER */
+
+.header {
+    height: 88px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid var(--line);
+    background: rgba(7,21,37,.85);
+    backdrop-filter: blur(15px);
+    transition: .3s;
+}
+
+.header.scrolled {
+    height: 72px;
+    background: rgba(7,21,37,.97);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font: 700 21px 'Space Grotesk',sans-serif;
+    letter-spacing: 2px;
+}
+
+.brand span {
+    color: var(--light);
+}
+
+.brand small {
+    display: block;
+    font: 9px 'DM Sans',sans-serif;
+    color: var(--muted);
+    letter-spacing: 4px;
+}
+
+.brand-icon {
+    width: 39px;
+    height: 39px;
+    border: 1px solid var(--light);
+    display: grid;
+    place-items: center;
+    color: var(--light);
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    font-size: 12px;
+    color: #c4d0df;
+    transition: .2s;
+}
+
+.nav a:hover {
+    color: var(--light);
+}
+
+.header-button {
+    border: 1px solid rgba(255,255,255,.35);
+    padding: 13px 18px;
+    font-size: 11px;
+    transition: .3s;
+}
+
+.header-button:hover {
+    background: var(--blue);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    color: white;
+    border: none;
+}
+
+/* MAIN HERO */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 150px 10% 100px;
+    overflow: hidden;
+    background: var(--navy);
+}
+
+/* Two background photos on homepage */
+
+.hero-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity 1.2s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-slides::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg,
+            #071525 0%,
+            rgba(7,21,37,.88) 35%,
+            rgba(7,21,37,.35) 100%),
+        linear-gradient(0deg,
+            #071525 0%,
+            transparent 40%);
+    pointer-events: none;
+}
+
+/* Fallback background */
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+        linear-gradient(90deg, #071525, rgba(7,21,37,.4)),
+        url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+}
+
+.eyebrow,
+.section-number {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--light);
+}
+
+.hero h1 {
+    font: 700 clamp(60px,9vw,115px)/.95 'Space Grotesk',sans-serif;
+    letter-spacing: -5px;
+    margin: 30px 0;
+}
+
+.hero h1 span,
+.about h2 span,
+.transport-content h2 span,
+.big-heading span,
+.contact-banner h2 span {
+    color: var(--light);
+}
+
+.hero-content > p {
+    max-width: 580px;
+    color: #c4d0df;
+    font-size: 17px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.button-primary {
+    display: inline-block;
+    background: var(--blue);
+    padding: 18px 25px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.button-primary:hover {
+    background: #3195ed;
+    transform: translateY(-3px);
+}
+
+.button-secondary {
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 35px;
+    left: 10%;
+    right: 10%;
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    z-index: 2;
+}
+
+/* SECTIONS */
+
+.section {
+    padding: 120px 10%;
+}
+
+.section-top {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px;
+    margin-bottom: 65px;
+}
+
+.section-small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+}
+
+.about h2 {
+    font: 700 clamp(55px,7vw,90px)/.95 'Space Grotesk',sans-serif;
+    letter-spacing: -5px;
+}
+
+.about-text {
+    padding-top: 10px;
+}
+
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 25px;
+    font-size: 15px;
+    max-width: 450px;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 20px;
+    border-bottom: 1px solid var(--blue);
+    padding-bottom: 10px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* SERVICES */
+
+.services {
+    background: var(--navy2);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.service-card {
+    border: 1px solid var(--line);
+    padding: 35px;
+    min-height: 330px;
+    position: relative;
+    transition: .3s;
+    background: rgba(255,255,255,.015);
+}
+
+.service-card:hover {
+    border-color: var(--light);
+    transform: translateY(-7px);
+}
+
+.service-number {
+    color: var(--light);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.service-icon {
+    font-size: 35px;
+    color: var(--light);
+    margin: 30px 0;
+}
+
+.service-card h3 {
+    font: 600 27px 'Space Grotesk',sans-serif;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.service-card a {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* TRANSPORT */
+
+.transport-section {
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 100px 10%;
+    overflow: hidden;
+}
+
+.transport-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+        linear-gradient(90deg,#071525 0%,#071525d9 35%,#07152555 100%),
+        url("https://www.stromstadstidning.se/images/og/a34ed29b-d828-4730-9f85-9329a9df090a/images/10paqElyH9-kP5-ulKRTJItFa7bU-REGULAR.jpg")
+        center/cover no-repeat;
+}
+
+.transport-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+}
+
+.transport-content h2 {
+    font: 700 clamp(65px,9vw,110px)/.95 'Space Grotesk',sans-serif;
+    letter-spacing: -5px;
+    margin: 30px 0;
+}
+
+.transport-content p {
+    color: #c4d0df;
+    margin-bottom: 30px;
+}
+
+/* WHY */
+
+.big-heading {
+    font: 700 clamp(55px,8vw,100px)/.95 'Space Grotesk',sans-serif;
+    letter-spacing: -5px;
+    margin-bottom: 70px;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 35px;
+}
+
+.why-grid > div {
+    border-top: 1px solid var(--line);
+    padding-top: 25px;
+}
+
+.why-grid span {
+    color: var(--light);
+    font-size: 11px;
+}
+
+.why-grid h3 {
+    font: 600 23px 'Space Grotesk',sans-serif;
+    margin: 20px 0 10px;
+}
+
+.why-grid p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* CONTACT BANNER */
+
+.contact-banner {
+    padding: 100px 10%;
+    background: var(--navy2);
+    border-top: 1px solid var(--line);
+}
+
+.contact-banner h2 {
+    font: 700 clamp(45px,7vw,85px)/1 'Space Grotesk',sans-serif;
+    letter-spacing: -4px;
+    margin: 35px 0;
+}
+
+/* FOOTER */
+
+.footer {
+    padding: 40px 10%;
+}
+
+.footer-top,
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-top {
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--line);
+}
+
+.footer-top > span,
+.footer-bottom {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.footer-bottom {
+    padding-top: 25px;
+}
+
+/* INTERNAL PAGES */
+
+.article-hero {
+    position: relative;
+    min-height: 600px;
+    padding: 190px 10% 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--navy);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+}
+
+.article-hero h1 {
+    font: 700 clamp(60px,9vw,110px)/.95 'Space Grotesk',sans-serif;
+    letter-spacing: -5px;
+    margin: 35px 0;
+}
+
+.article-hero h1 span {
+    color: var(--light);
+}
+
+.article-hero p {
+    color: #c4d0df;
+    font-size: 16px;
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+/* ABOUT — SCANIA */
+
+.article-hero.hero-about {
+    background-image:
+        linear-gradient(90deg, rgba(7,21,37,.95), rgba(7,21,37,.3)),
+        url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=2000&q=85");
+}
+
+/* SERVICES — TRUCK */
+
+.article-hero.hero-services {
+    background-image:
+        linear-gradient(90deg, rgba(7,21,37,.95), rgba(7,21,37,.3)),
+        url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=2000&q=85");
+}
+
+/* PROCESS — SCANIA */
+
+.article-hero.hero-process {
+    background-image:
+        linear-gradient(90deg, rgba(7,21,37,.95), rgba(7,21,37,.3)),
+        url("https://jager-transport.com/img/ponyvas_6_big.jpg");
+}
+
+/* WHY — BLUE SCANIA */
+
+.article-hero.hero-why {
+    background-image:
+        linear-gradient(90deg, rgba(7,21,37,.95), rgba(7,21,37,.3)),
+        url("https://ctltransport.ro/assets/img/fleet/ctl-transport-fleet-08.webp");
+}
+
+/* CONTACT — WHITE SCANIA */
+
+.article-hero.hero-contact {
+    background-image:
+        linear-gradient(90deg, rgba(7,21,37,.95), rgba(7,21,37,.3)),
+        url("https://www.hellmann.com/sites/default/files/styles/hwl_key_image_hero_2x/public/2021-02/downloads-roadfreight.jpg?itok=NX1Ni-Ij");
+}
+
+/* ARTICLE CONTENT */
+
+.article-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.article-layout h2,
+.contact-layout h2 {
+    font: 700 clamp(45px,6vw,75px)/.95 'Space Grotesk',sans-serif;
+    margin-top: 30px;
+    letter-spacing: -3px;
+}
+
+.article-layout h2 span,
+.contact-layout h2 span {
+    color: var(--light);
+}
+
+.article-text {
+    color: var(--muted);
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.article-image {
+    min-height: 450px;
+    background:
+        linear-gradient(0deg,#071525 0%,transparent 50%),
+        url("https://www.fahrzeugbilder.de/1024/scania-r-480-daf-xf-39586.jpg")
+        center/cover no-repeat;
+}
+
+/* SERVICE DETAILS */
+
+.service-detail {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 30px;
+    padding: 45px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.service-detail-number {
+    font-size: 25px;
+    color: var(--light);
+}
+
+.service-detail h2 {
+    font: 600 35px 'Space Grotesk',sans-serif;
+    margin-bottom: 20px;
+}
+
+.service-detail p {
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 650px;
+}
+
+/* PROCESS */
+
+.process-step {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 30px;
+    padding: 45px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.process-step > span {
+    font-size: 25px;
+    color: var(--light);
+}
+
+.process-step h2 {
+    font: 600 35px 'Space Grotesk',sans-serif;
+    margin-bottom: 15px;
+}
+
+.process-step p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* FAQ */
+
+.faq-section details {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.faq-section summary {
+    cursor: pointer;
+    font: 600 22px 'Space Grotesk',sans-serif;
+    list-style: none;
+}
+
+.faq-section summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-section summary::after {
+    content: "+";
+    float: right;
+    color: var(--light);
+    font-size: 25px;
+}
+
+.faq-section details[open] summary::after {
+    content: "−";
+}
+
+.faq-section details p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 25px;
+    max-width: 700px;
+}
+
+/* CONTACT */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-form label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--light);
+}
+
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    background: #0b1d31;
+    border: 1px solid var(--line);
+    padding: 17px;
+    color: white;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--light);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    border: none;
+    color: white;
+    align-self: flex-start;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px) {
+    .nav {
+        gap: 15px;
+    }
+
+    .nav a {
+        font-size: 10px;
+    }
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .about-grid {
+        gap: 40px;
+    }
+
+    .service-card {
+        padding: 25px;
+    }
+}
+
+@media(max-width:750px) {
+    .header {
+        height: 75px;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: var(--navy2);
+        padding: 25px;
+        flex-direction: column;
+    }
+
+    .nav.open {
+        display: flex;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+
+    .header-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .hero {
+        min-height: 750px;
+        padding: 130px 7% 100px;
+    }
+
+    .hero h1 {
+        font-size: 65px;
+        letter-spacing: -3px;
+    }
+
+    .hero-bottom {
+        left: 7%;
+        right: 7%;
+        font-size: 8px;
+    }
+
+    .hero-bottom span:nth-child(2) {
+        display: none;
+    }
+
+    .section {
+        padding: 75px 7%;
+    }
+
+    .section-top {
+        margin-bottom: 45px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about h2 {
+        font-size: 65px;
+    }
+
+    .services-grid,
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: auto;
+    }
+
+    .transport-section {
+        min-height: 600px;
+        padding: 80px 7%;
+    }
+
+    .big-heading {
+        font-size: 55px;
+    }
+
+    .contact-banner {
+        padding: 80px 7%;
+    }
+
+    .footer {
+        padding: 30px 7%;
+    }
+
+    .footer-top,
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .article-hero {
+        min-height: 500px;
+        padding: 150px 7% 80px;
+        background-position: center;
+    }
+
+    .article-hero h1 {
+        font-size: 60px;
+    }
+
+    .article-layout,
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .service-detail,
+    .process-step {
+        grid-template-columns: 50px 1fr;
+        gap: 20px;
+    }
+
+    .service-detail h2,
+    .process-step h2 {
+        font-size: 27px;
+    }
+
+    .article-image {
+        min-height: 280px;
+    }
+}

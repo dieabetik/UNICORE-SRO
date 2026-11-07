@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O společnosti | UNICORE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        .company-page {
+            padding: 140px 8% 90px;
+            background: var(--navy, #071525);
+            color: white;
+        }
+
+        .company-intro {
+            max-width: 850px;
+            margin-bottom: 65px;
+        }
+
+        .company-label {
+            color: #70baff;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .company-intro h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 1.05;
+            margin: 0 0 25px;
+        }
+
+        .company-intro h1 span {
+            color: #70baff;
+        }
+
+        .company-intro p {
+            color: #b8c6d5;
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 700px;
+        }
+
+        .company-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 65px;
+            margin-bottom: 75px;
+        }
+
+        .company-feature.reverse .company-photo {
+            order: 2;
+        }
+
+        .company-photo {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .company-text h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(30px, 4vw, 43px);
+            line-height: 1.15;
+            margin: 0 0 22px;
+        }
+
+        .company-text h2 span {
+            color: #70baff;
+        }
+
+        .company-text p {
+            color: #b8c6d5;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 18px;
+        }
+
+        .company-number {
+            color: #70baff;
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .company-bottom {
+            padding: 45px;
+            border: 1px solid rgba(112,186,255,0.2);
+            background: #0b1d31;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .company-bottom h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 34px;
+            margin: 0 0 15px;
+        }
+
+        .company-bottom p {
+            color: #b8c6d5;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        @media (max-width: 800px) {
+            .company-page {
+                padding: 120px 6% 60px;
+            }
+
+            .company-feature {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-bottom: 55px;
+            }
+
+            .company-feature.reverse .company-photo {
+                order: 0;
+            }
+
+            .company-photo {
+                height: 270px;
+            }
+
+            .company-bottom {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <a href="index.html" class="brand">UNICORE<span>.</span></a>
+
+    <nav class="nav">
+        <a href="index.html">Domů</a>
+        <a href="about.html">O nás</a>
+        <a href="services.html">Služby</a>
+        <a href="process.html">Jak pracujeme</a>
+        <a href="why.html">Proč UNICORE</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+
+    <a href="contact.html" class="header-button">Kontaktujte nás</a>
+    <button class="menu-toggle" aria-label="Otevřít menu">☰</button>
+</header>
+
+<main class="company-page">
+
+    <section class="company-intro">
+        <div class="company-label">01 / O SPOLEČNOSTI</div>
+        <h1>POHYB, KTERÝ<br><span>SPOJUJE.</span></h1>
+        <p>
+            UNICORE představuje moderní přístup k evropské přepravě.
+            Naším cílem je nabídnout spolehlivá logistická řešení,
+            která pomáhají firmám posouvat jejich podnikání dál.
+        </p>
+    </section>
+
+    <section class="company-feature">
+
+        <img
+            class="company-photo"
+            src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=85"
+            alt="Evropský nákladní automobil na silnici"
+        >
+
+        <div class="company-text">
+            <div class="company-number">01 — NAŠE VIZE</div>
+            <h2>Více než jen <span>přeprava.</span></h2>
+            <p>
+                Věříme, že kvalitní logistika není pouze o přesunu
+                zboží z jednoho místa na druhé. Je o důvěře,
+                komunikaci a dobře organizované spolupráci.
+            </p>
+            <p>
+                Chceme být partnerem, na kterého se mohou
+                zákazníci spolehnout při každém kroku.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="company-feature reverse">
+
+        <img
+            class="company-photo"
+            src="https://www.stromstadstidning.se/images/og/a34ed29b-d828-4730-9f85-9329a9df090a/images/10paqElyH9-kP5-ulKRTJItFa7bU-REGULAR.jpg"
+            alt="Nákladní doprava a logistika"
+        >
+
+        <div class="company-text">
+            <div class="company-number">02 — NÁŠ PŘÍSTUP</div>
+            <h2>Spolehlivost v každém <span>kilometru.</span></h2>
+            <p>
+                Každá přeprava vyžaduje plánování, odpovědnost
+                a pozornost k detailům. Proto klademe důraz
+                na přehlednou komunikaci a efektivní organizaci.
+            </p>
+            <p>
+                Naším cílem je, aby zákazník vždy věděl,
+                na čem je a co může očekávat.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="company-bottom">
+        <h2>Hledáte partnera pro přepravu?</h2>
+        <p>
+            Rádi s vámi probereme vaše požadavky
+            a společně najdeme vhodné řešení.
+        </p>
+        <a href="contact.html" class="button-primary">KONTAKTUJTE NÁS ↗</a>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-top">
+        <div class="brand">UNICORE<span>.</span></div>
+        <p>Evropská přeprava. Spolehlivá řešení.</p>
+        <a href="contact.html">Kontaktujte nás ↗</a>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 UNICORE. Všechna práva vyhrazena.</p>
+        <a href="index.html">Zpět nahoru ↑</a>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
